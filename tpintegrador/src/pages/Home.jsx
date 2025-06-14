@@ -5,6 +5,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import ProductCard from '../components/ProductCard';
 import { addFavorite, removeFavorite } from '../features/products/productsSlice';
+import Button from '@mui/material/Button';
 
 function Home() {
   const products = useSelector(state => state.products.items);
@@ -49,6 +50,14 @@ function Home() {
       >
         Lista de Productos
       </Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        sx={{ mb: 3 }}
+        onClick={() => navigate('/crear')}
+      >
+        Agregar Producto
+      </Button>
       <Grid container spacing={4} justifyContent="center" alignItems="center">
         {products.length === 0 ? (
           <Grid item xs={12}>

@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton from '@mui/material/IconButton';
 import { addFavorite, removeFavorite } from '../features/products/productsSlice';
+import EditIcon from '@mui/icons-material/Edit';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -61,6 +62,14 @@ function ProductDetail() {
       </IconButton>
       <Button sx={{ ml: 2 }} variant="outlined" onClick={() => navigate(-1)}>
         Volver
+      </Button>
+      <Button
+        sx={{ ml: 2 }}
+        variant="contained"
+        startIcon={<EditIcon />}
+        onClick={() => navigate(`/editar/${product.id}`)}
+      >
+        Editar
       </Button>
     </Container>
   );
