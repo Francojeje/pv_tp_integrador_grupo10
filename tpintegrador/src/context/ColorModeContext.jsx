@@ -39,8 +39,8 @@ export function ColorModeProvider({ children }) {
               }
             : {
                 background: {
-                  default: '#f4f6f8',
-                  paper: '#fff',
+                  default: '#ffffff', // Fondo blanco real
+                  paper: '#f4f6f8',   // Paper más claro
                 },
                 primary: {
                   main: '#1976d2',
@@ -49,8 +49,8 @@ export function ColorModeProvider({ children }) {
                   main: '#d81b60',
                 },
                 text: {
-                  primary: '#222',
-                  secondary: '#555',
+                  primary: '#222222', // Texto bien oscuro
+                  secondary: '#555555',
                 },
               }),
         },
