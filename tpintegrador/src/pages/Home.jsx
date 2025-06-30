@@ -13,7 +13,7 @@ import Box from '@mui/material/Box';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import { useInView } from 'react-intersection-observer';
-
+import { logout } from '../features/auth/authSlice';
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.items);
@@ -75,6 +75,18 @@ function Home() {
         py: 6,
       }}
     >
+      <Button
+  variant="outlined"
+  color="secondary"
+  onClick={() => {
+    dispatch(logout());
+    navigate('/login');
+  }}
+  sx={{ mb: 3 }}
+>
+  Cerrar sesión
+</Button>
+
       <Typography variant="h4" align="center" fontWeight={700} gutterBottom>
         Catálogo de Producto
       </Typography>
